@@ -1,0 +1,32 @@
+name: Create Release(s)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Setup git
+        run: |
+          git config user.name "Powntheep Laokhunthot"
+          git config user.email "powntheep@milk.build"
+      - uses: dart-lang/setup-dart@v1
+      - uses: bluefireteam/melos-action@v2
+
+      - name: List changes
+        run: git log
+      - name: List packages
+        run: melos list
+      - name: Create the new version(s)
+        run: melos version --all --yes
+
+      - name: Push created version commit
+        run: git push
+      - name: Push modified tags
+        run: git push --tags

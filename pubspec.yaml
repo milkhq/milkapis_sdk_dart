@@ -1,0 +1,8 @@
+name: milkapis_sdk_dart_workspace
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dev_dependencies:
+  melos: ^3.1.0
+

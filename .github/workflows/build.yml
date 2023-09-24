@@ -1,0 +1,32 @@
+name: Build & Test
+
+on:
+  pull_request:
+  # push:
+  #   branches:
+  #     - main
+#   schedule:
+#     # runs the CI everyday at 10AM
+#     - cron: "0 10 * * *"
+# on:
+  workflow_dispatch:
+
+jobs:
+  # General build, check, and test steps
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      - uses: bluefireteam/melos-action@v2
+
+      # Dart/Flutter
+      - name: Check Dart format
+        run: melos run check-format --no-select
+      - name: Dart code analysis
+        run: melos run analyze --no-select
+      - name: Run Dart tests
+        run: melos run test --no-select
+

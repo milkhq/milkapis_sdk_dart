@@ -1,0 +1,38 @@
+name: milkapis_sdk_dart_workspace
+
+repository: https://github.com/milkhq/milkapis_sdk_dart
+
+packages:
+  - packages/sdk
+
+scripts:
+  analyze:
+    exec: flutter analyze .
+    description: Analyze a specific package in this project.
+
+  fix:
+    exec: dart fix --apply
+    description: Analyze a specific package in this project.
+
+  check-format:
+    exec: dart format --set-exit-if-changed .
+    description: Check the format of a specific package in this project.
+
+  format:
+    exec: dart format .
+    description: Format a specific package in this project.
+
+  # version:
+  #   description: Updates version numbers in all build files
+  #   run: bash scripts/version.sh
+
+  build:
+    run: melos run build:apple && melos run build:android && melos run build:other
+    description: Build all native libraries for the project.
+
+  test:
+    run: melos exec -c 1 --fail-fast -- "flutter test test"
+    description: Run Flutter tests for a specific package in this project.
+    select-package:
+      flutter: true
+      dir-exists: test
