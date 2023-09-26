@@ -5,7 +5,7 @@ on:
 
 jobs:
   create_release:
-    runs-on: [self-hosted, macOS, ARM64]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -16,6 +16,8 @@ jobs:
           git config user.name "Powntheep Laokhunthot"
           git config user.email "powntheep@milk.build"
       - uses: bluefireteam/melos-action@v2
+        with:
+          run-bootstrap: false
       - name: List changes
         run: git log
       - name: List packages
