@@ -1,3 +1,7 @@
+## 0.0.2
+
+ - **FEAT**: added messaging stub.
+
 ## 0.0.1
 
  - **FEAT**: update to milkapis_protobuf-v0.0.6.
