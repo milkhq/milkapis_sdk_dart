@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library;
 
-export 'src/sdk_base.dart';
+export 'src/core_firebase_impl.dart';
+export 'src/base.dart';
 
 // TODO: Export any libraries intended for clients of this package.

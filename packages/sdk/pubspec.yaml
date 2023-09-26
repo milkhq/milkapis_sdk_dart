@@ -2,6 +2,7 @@ name: milkapis_sdk_dart
 description: A dart sdk for milkapis.
 version: 0.0.0
 repository: https://github.com/milkhq/milkapis_sdk_dart
+publish_to: none
 
 environment:
   sdk: ^3.2.0-190.0.dev
@@ -9,6 +10,16 @@ environment:
 # Add regular dependencies here.
 dependencies:
   path: ^1.8.0
+  firebase_auth: ^4.10.0
+  firebase_core: ^2.16.0
+  milkapis_client_dart:
+    git:
+      url: https://github.com/milkhq/milkapis_protobuf.git
+      ref: milkapis_protobuf-v0.0.5
+      path: src/generated/dart
+  get_it: ^7.6.4
+  grpc: ^3.2.4
+  pool: ^1.5.1
 
 dev_dependencies:
   lints: ^2.1.0
