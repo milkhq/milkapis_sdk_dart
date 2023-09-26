@@ -13,14 +13,15 @@ jobs:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
           fetch-depth: 0
       - name: Setup git
+        env:
+          PAT: ${{ secrets.BOT_ACCESS_TOKEN }}
         run: |
           git config user.name "Powntheep Laokhunthot"
           git config user.email "powntheep@milk.build"
+          git config --global credential.https://github.com.username git
+          git config --global credential.https://github.com.password $PAT
       - uses: dart-lang/setup-dart@v1
       - uses: bluefireteam/melos-action@v2
-        with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
-
       - name: List changes
         run: git log
       - name: List packages
