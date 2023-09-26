@@ -21,7 +21,7 @@ jobs:
           git config user.email "powntheep@milk.build"
       - uses: bluefireteam/melos-action@v2
         with:
-          run-bootstrap: false
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
       - name: List changes
         run: git log
       - name: List packages
