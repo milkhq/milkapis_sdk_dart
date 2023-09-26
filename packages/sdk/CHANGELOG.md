@@ -1,3 +1,7 @@
+## 0.0.5
+
+ - **FEAT**: upgrade milkapis_protobuf to v0.0.8.
+
 ## 0.0.4
 
  - **FEAT**: added get space channels.
