@@ -12,7 +12,9 @@ jobs:
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
           fetch-depth: 0
-      - uses: dart-lang/setup-dart@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'master' # or: 'beta', 'dev' or 'master'
       - name: Setup git
         env:
           PAT: ${{ secrets.BOT_ACCESS_TOKEN }}
