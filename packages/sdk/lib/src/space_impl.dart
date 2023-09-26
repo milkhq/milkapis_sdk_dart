@@ -3,7 +3,6 @@ import 'package:milkapis_client_dart/generated/space.pbgrpc.dart'
     as space_schema;
 import 'package:milkapis_sdk_dart/src/base.dart';
 import 'package:milkapis_sdk_dart/src/grpc_client.dart';
-import 'package:milkapis_sdk_dart/src/space_interface.dart';
 import 'package:pool/pool.dart';
 
 export 'package:milkapis_client_dart/generated/space.pbgrpc.dart';

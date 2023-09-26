@@ -4,8 +4,10 @@ import 'package:milkapis_sdk_dart/sdk.dart';
 export 'package:milkapis_sdk_dart/src/auth_firebase_impl.dart';
 export 'package:milkapis_sdk_dart/src/auth_interface.dart';
 export 'package:milkapis_sdk_dart/src/core_interface.dart';
+export 'package:milkapis_sdk_dart/src/core_firebase_impl.dart';
 export 'package:milkapis_sdk_dart/src/space_impl.dart';
 export 'package:milkapis_sdk_dart/src/space_interface.dart';
+export 'package:milkapis_sdk_dart/src/messaging_interface.dart';
 
 class MilkSdk {
   static init() {
