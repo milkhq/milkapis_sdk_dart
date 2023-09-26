@@ -5,6 +5,8 @@ import 'package:pool/pool.dart';
 import 'package:milkapis_client_dart/generated/messaging.pbgrpc.dart'
     as messaging;
 
+export 'package:milkapis_client_dart/generated/messaging.pbgrpc.dart';
+
 class MessagingImpl extends Messaging {
   final _clientPool = Pool(3, timeout: Duration(seconds: 30));
 
