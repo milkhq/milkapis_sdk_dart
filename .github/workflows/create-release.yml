@@ -18,9 +18,6 @@ jobs:
         run: |
           git config user.name "Powntheep Laokhunthot"
           git config user.email "powntheep@milk.build"
-          git config --global credential.https://github.com.username git
-          git config --global credential.https://github.com.password $PAT
-      - uses: dart-lang/setup-dart@v1
       - uses: bluefireteam/melos-action@v2
       - name: List changes
         run: git log
