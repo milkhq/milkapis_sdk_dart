@@ -17,7 +17,7 @@ dependencies:
   milkapis_client_dart:
     git:
       url: https://github.com/milkhq/milkapis_protobuf.git
-      ref: milkapis_protobuf-v0.0.8
+      ref: e883f7b5460da3a43bc6ef8cf00ceb0b1a1b0979
       path: src/generated/dart
   get_it: ^7.6.4
   grpc: ^3.2.4
