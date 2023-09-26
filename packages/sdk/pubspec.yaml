@@ -5,10 +5,12 @@ repository: https://github.com/milkhq/milkapis_sdk_dart
 publish_to: none
 
 environment:
-  sdk: ^3.2.0-190.0.dev
+  sdk: ">=3.0.0 <4.0.0"
 
 # Add regular dependencies here.
 dependencies:
+  flutter:
+    sdk: flutter
   path: ^1.8.0
   firebase_auth: ^4.10.0
   firebase_core: ^2.16.0
