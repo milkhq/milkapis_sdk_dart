@@ -9,12 +9,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      # - name: Setup git
-      #   env:
-      #     PAT: ${{ secrets.BOT_ACCESS_TOKEN }}
-      #   run: |
-      #     git config user.name "Powntheep Laokhunthot"
-      #     git config user.email "powntheep@milk.build"
+      - name: Setup git
+        env:
+          PAT: ${{ secrets.BOT_ACCESS_TOKEN }}
+        run: |
+          git config user.name "Powntheep Laokhunthot"
+          git config user.email "powntheep@milk.build"
       - uses: bluefireteam/melos-action@v2
       - name: List changes
         run: git log
