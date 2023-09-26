@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:milkapis_sdk_dart/sdk.dart';
+import 'package:milkapis_sdk_dart/src/messaging_impl.dart';
 
 export 'package:milkapis_sdk_dart/src/auth_firebase_impl.dart';
 export 'package:milkapis_sdk_dart/src/auth_interface.dart';
@@ -16,9 +17,11 @@ class MilkSdk {
     GetIt.instance
         .registerLazySingleton<AuthFirebaseImpl>(() => AuthFirebaseImpl());
     GetIt.instance.registerLazySingleton<SpaceImpl>(() => SpaceImpl());
+    GetIt.instance.registerLazySingleton<MessagingImpl>(() => MessagingImpl());
   }
 
   static CoreFirebaseImpl get core => GetIt.instance.get<CoreFirebaseImpl>();
   static SpaceImpl get space => GetIt.instance.get<SpaceImpl>();
   static AuthFirebaseImpl get auth => GetIt.instance.get<AuthFirebaseImpl>();
+  static MessagingImpl get messaging => GetIt.instance.get<MessagingImpl>();
 }

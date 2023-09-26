@@ -24,25 +24,25 @@ abstract class Messaging {
     required UpdateChannelMetadataRequest request,
   });
 
-  Future<UpdateChannelStatusRequest> deleteSpaceChannel(
+  Future<UpdateChannelStatusResponse> deleteSpaceChannel(
       {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> deleteDirectChannel(
+  Future<UpdateChannelStatusResponse> deleteDirectChannel(
       {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> deleteThreadChannel(
-      {required UpdateChannelStatusRequest request});
-
-  Future<UpdateChannelStatusRequest> archiveSpaceChannel(
-      {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> archiveDirectChannel(
-      {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> archiveThreadChannel(
+  Future<UpdateChannelStatusResponse> deleteThreadChannel(
       {required UpdateChannelStatusRequest request});
 
-  Future<UpdateChannelStatusRequest> activateSpaceChannel(
+  Future<UpdateChannelStatusResponse> archiveSpaceChannel(
       {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> activateDirectChannel(
+  Future<UpdateChannelStatusResponse> archiveDirectChannel(
       {required UpdateChannelStatusRequest request});
-  Future<UpdateChannelStatusRequest> activateThreadChannel(
+  Future<UpdateChannelStatusResponse> archiveThreadChannel(
+      {required UpdateChannelStatusRequest request});
+
+  Future<UpdateChannelStatusResponse> activateSpaceChannel(
+      {required UpdateChannelStatusRequest request});
+  Future<UpdateChannelStatusResponse> activateDirectChannel(
+      {required UpdateChannelStatusRequest request});
+  Future<UpdateChannelStatusResponse> activateThreadChannel(
       {required UpdateChannelStatusRequest request});
 
   Future<SendMessageResponse> sendSpaceChannelMessage(
