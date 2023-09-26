@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - **FEAT**: added get space channels.
+
 ## 0.0.3
 
  - **FEAT**: added Messaging impl.
