@@ -18,6 +18,8 @@ jobs:
           git config user.email "powntheep@milk.build"
       - uses: dart-lang/setup-dart@v1
       - uses: bluefireteam/melos-action@v2
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
       - name: List changes
         run: git log
