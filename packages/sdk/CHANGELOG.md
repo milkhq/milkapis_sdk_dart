@@ -1,3 +1,9 @@
+## 0.0.6
+
+ - **FIX**: document status enum export.
+ - **FEAT**: upgrade proto to v0.0.9.
+ - **FEAT**: updated protobuf.
+
 ## 0.0.5
 
  - **FEAT**: upgrade milkapis_protobuf to v0.0.8.
