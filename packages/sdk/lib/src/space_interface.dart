@@ -29,6 +29,14 @@ abstract class Space {
   Future<space_schema.SpaceInviteDocument> getSpaceInvite(
       {required String spaceId, required String spaceInviteDocumentId});
 
-  Future<List<space_schema.UserSpaceDocument>> getUserSpaces(
-      {required String uid});
+  Future<List<String>> getUserSpaces({required String uid});
+  Future<space_schema.UpdateSpaceCustomizationResponse>
+      updateSpaceCustomization(
+          {required space_schema.UpdateSpaceCustomizationRequest request});
+  Future<space_schema.UpdateSpaceCustomizationResponse>
+      updateSpaceCustomizationProfile(
+          {required space_schema.UpdateSpaceCustomizationRequest request});
+
+  Future<space_schema.UpdateUserSpaceOrderResponse> updateUserSpaceOrder(
+      {required space_schema.UpdateUserSpaceOrderRequest request});
 }

@@ -198,4 +198,19 @@ class MessagingImpl extends Messaging {
         .then((client) => client.getSpaceChannels(request))
         .then((response) => response.documents);
   }
+
+  @override
+  Future<UpdateSpaceChannelOrderResponse> updateSpaceChannelOrder(
+      {required UpdateSpaceChannelOrderRequest request}) {
+    return getClient()
+        .then((client) => client.updateSpaceChannelOrder(request));
+  }
+
+  @override
+  Future<List<ChannelCategoryDocument>> getSpaceChannelCategories(
+      {required GetSpaceChannelCategoriesRequest request}) {
+    return getClient()
+        .then((client) => client.getSpaceChannelCategories(request))
+        .then((response) => response.documents);
+  }
 }

@@ -144,8 +144,8 @@ class AuthFirebaseImpl extends Auth {
   }
 
   @override
-  Future<List<user_schema.CustomizationProfileDocument>>
-      getCustomizationProfilesByUid({required String uid}) async {
+  Future<List<String>> getCustomizationProfilesByUid(
+      {required String uid}) async {
     final client = await getClient();
 
     final response = await client.listUserCustomizationProfiles(
@@ -184,5 +184,33 @@ class AuthFirebaseImpl extends Auth {
       customizationProfileId: customizationProfileId,
       updatedDocument: customizationProfile,
     ));
+  }
+
+  @override
+  Future<user_schema.UpdateUserCustomizationProfileResponse>
+      updateUserCustomizationProfile(
+          {required user_schema.UpdateUserCustomizationProfileRequest
+              request}) {
+    return getClient().then((client) {
+      return client.updateUserCustomizationProfile(request);
+    });
+  }
+
+  @override
+  Future<user_schema.CustomizationProfileDocument>
+      createUserCustomizationProfile(
+          {required user_schema.CreateUserCustomizationProfileRequest
+              request}) {
+    return getClient().then((client) {
+      return client.createUserCustomizationProfile(request);
+    });
+  }
+
+  @override
+  Future<user_schema.CustomizationProfileDocument> getUserCustomizationProfile(
+      {required user_schema.GetUserCustomizationProfileRequest request}) {
+    return getClient().then((client) {
+      return client.getUserCustomizationProfile(request);
+    });
   }
 }

@@ -1,4 +1,5 @@
 import 'package:milkapis_client_dart/generated/user.pbgrpc.dart' as user_schema;
+import 'package:milkapis_sdk_dart/sdk.dart';
 
 typedef UserMetadata = user_schema.UserDocument;
 
@@ -22,8 +23,11 @@ abstract class Auth {
   Future<user_schema.CustomizationProfileDocument> getCustomizationProfileByUid(
       {required String uid});
 
-  Future<List<user_schema.CustomizationProfileDocument>>
-      getCustomizationProfilesByUid({required String uid});
+  Future<List<String>> getCustomizationProfilesByUid({required String uid});
+
+  Future<CustomizationProfileDocument> getUserCustomizationProfile({
+    required GetUserCustomizationProfileRequest request,
+  });
 
   Stream<List<user_schema.CustomizationProfileDocument>>
       subscribeCustomizationProfilesByUid({required String uid});
@@ -35,6 +39,11 @@ abstract class Auth {
       {required String uid,
       required String customizationProfileId,
       required user_schema.CustomizationProfileDocument customizationProfile});
+
+  Future<UpdateUserCustomizationProfileResponse> updateUserCustomizationProfile(
+      {required UpdateUserCustomizationProfileRequest request});
+  Future<CustomizationProfileDocument> createUserCustomizationProfile(
+      {required CreateUserCustomizationProfileRequest request});
 
   Future<void> signInWithEmailAndPassword(String email, String password);
   Future<void> signInWithCustomToken(String token);

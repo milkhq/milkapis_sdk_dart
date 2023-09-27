@@ -72,4 +72,10 @@ abstract class Messaging {
   Future<ChannelDocument> getSpaceChannel({
     required GetSpaceChannelRequest request,
   });
+
+  Future<UpdateSpaceChannelOrderResponse> updateSpaceChannelOrder(
+      {required UpdateSpaceChannelOrderRequest request});
+
+  Future<List<ChannelCategoryDocument>> getSpaceChannelCategories(
+      {required GetSpaceChannelCategoriesRequest request});
 }

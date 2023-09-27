@@ -48,10 +48,9 @@ class SpaceImpl extends Space {
       {required space_schema.SpaceDocument space}) async {
     final client = await getClient();
 
-    final response = await client
-        .createSpace(space_schema.CreateSpaceRequest(document: space));
+    await client.createSpace(space_schema.CreateSpaceRequest(document: space));
 
-    space.documentId = response.spaceId;
+    space.documentStatus = space_schema.DOCUMENT_STATUS.APPROVED;
 
     return space;
   }
@@ -150,13 +149,38 @@ class SpaceImpl extends Space {
   }
 
   @override
-  Future<List<space_schema.UserSpaceDocument>> getUserSpaces(
-      {required String uid}) async {
+  Future<List<String>> getUserSpaces({required String uid}) async {
     final client = await getClient();
 
     final response =
         await client.getUserSpaces(space_schema.GetUserSpacesRequest(uid: uid));
 
     return response.documents;
+  }
+
+  @override
+  Future<space_schema.UpdateSpaceCustomizationResponse>
+      updateSpaceCustomization(
+          {required space_schema.UpdateSpaceCustomizationRequest request}) {
+    return getClient().then((client) {
+      return client.updateSpaceCustomization(request);
+    });
+  }
+
+  @override
+  Future<space_schema.UpdateSpaceCustomizationResponse>
+      updateSpaceCustomizationProfile(
+          {required space_schema.UpdateSpaceCustomizationRequest request}) {
+    return getClient().then((client) {
+      return client.updateSpaceCustomization(request);
+    });
+  }
+
+  @override
+  Future<space_schema.UpdateUserSpaceOrderResponse> updateUserSpaceOrder(
+      {required space_schema.UpdateUserSpaceOrderRequest request}) {
+    return getClient().then((client) {
+      return client.updateUserSpaceOrder(request);
+    });
   }
 }
