@@ -1,14 +1,16 @@
 import 'package:milkapis_client_dart/generated/space.pbgrpc.dart'
     as space_schema;
+import 'package:milkapis_sdk_dart/sdk.dart';
 
 abstract class Space {
   String host = 'localhost';
   int port = 8082;
   bool isGrpcWeb = false;
 
+  Future<space_schema.SpaceClient> getClient();
   Future<space_schema.SpaceDocument> getSpaceById({required String spaceId});
-  Future<space_schema.SpaceDocument> createSpace(
-      {required space_schema.SpaceDocument space});
+  Future<space_schema.CreateSpaceResponse> createSpace(
+      {required CreateSpaceRequest request});
   Future<void> updateSpaceMetadata(
       {required String spaceId,
       required space_schema.SpaceDocument_Metadata metadata});

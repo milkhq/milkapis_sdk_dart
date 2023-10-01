@@ -66,7 +66,7 @@ abstract class Messaging {
   Future<DeleteMessageResponse> deleteThreadChannelMessage(
       {required DeleteMessageRequest request});
 
-  Future<List<ChannelDocument>> getSpaceChannels(
+  Future<List<String>> getSpaceChannels(
       {required GetSpaceChannelsRequest request});
 
   Future<ChannelDocument> getSpaceChannel({
@@ -78,4 +78,6 @@ abstract class Messaging {
 
   Future<List<ChannelCategoryDocument>> getSpaceChannelCategories(
       {required GetSpaceChannelCategoriesRequest request});
+
+  Future<MessagingClient> getClient();
 }

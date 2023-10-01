@@ -23,6 +23,7 @@ class MessagingImpl extends Messaging {
         }
       ]);
 
+  @override
   Future<messaging.MessagingClient> getClient() async {
     return messaging.MessagingClient(await channel, options: callOptions);
   }
@@ -192,7 +193,7 @@ class MessagingImpl extends Messaging {
   }
 
   @override
-  Future<List<ChannelDocument>> getSpaceChannels(
+  Future<List<String>> getSpaceChannels(
       {required GetSpaceChannelsRequest request}) {
     return getClient()
         .then((client) => client.getSpaceChannels(request))

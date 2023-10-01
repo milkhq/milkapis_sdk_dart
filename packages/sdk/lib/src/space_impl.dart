@@ -23,6 +23,7 @@ class SpaceImpl extends Space {
         }
       ]);
 
+  @override
   Future<space_schema.SpaceClient> getClient() async {
     return space_schema.SpaceClient(await channel, options: callOptions);
   }
@@ -44,15 +45,11 @@ class SpaceImpl extends Space {
   }
 
   @override
-  Future<space_schema.SpaceDocument> createSpace(
-      {required space_schema.SpaceDocument space}) async {
-    final client = await getClient();
-
-    await client.createSpace(space_schema.CreateSpaceRequest(document: space));
-
-    space.documentStatus = space_schema.DOCUMENT_STATUS.APPROVED;
-
-    return space;
+  Future<space_schema.CreateSpaceResponse> createSpace(
+      {required space_schema.CreateSpaceRequest request}) {
+    return getClient().then((client) {
+      return client.createSpace(request);
+    });
   }
 
   @override
