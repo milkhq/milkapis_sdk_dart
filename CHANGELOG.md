@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`milkapis_sdk_dart` - `v0.0.8`](#milkapis_sdk_dart---v008)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.8`
+
+ - **FEAT**: upgrade protobuf to v0.0.11.
+
+
 ## 2023-09-27
 
 ### Changes
