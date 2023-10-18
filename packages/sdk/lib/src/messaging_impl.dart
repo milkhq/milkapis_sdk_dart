@@ -104,13 +104,6 @@ class MessagingImpl extends Messaging {
   }
 
   @override
-  Future<DeleteMessageResponse> deleteSpaceChannelMessage(
-      {required DeleteMessageRequest request}) {
-    return getClient()
-        .then((client) => client.deleteSpaceChannelMessage(request));
-  }
-
-  @override
   Future<UpdateChannelStatusResponse> deleteThreadChannel(
       {required UpdateChannelStatusRequest request}) {
     return getClient().then((client) => client.deleteThreadChannel(request));
@@ -156,13 +149,6 @@ class MessagingImpl extends Messaging {
       {required UpdateChannelMetadataRequest request}) {
     return getClient()
         .then((client) => client.updateDirectChannelMetadata(request));
-  }
-
-  @override
-  Future<UpdateMessageResponse> updateSpaceChannelMessage(
-      {required UpdateMessageRequest request}) {
-    return getClient()
-        .then((client) => client.updateSpaceChannelMessage(request));
   }
 
   @override

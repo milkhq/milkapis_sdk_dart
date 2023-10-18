@@ -52,15 +52,11 @@ abstract class Messaging {
   Future<SendMessageResponse> sendThreadChannelMessage(
       {required SendMessageRequest request});
 
-  Future<UpdateMessageResponse> updateSpaceChannelMessage(
-      {required UpdateMessageRequest request});
   Future<UpdateMessageResponse> updateDirectChannelMessage(
       {required UpdateMessageRequest request});
   Future<UpdateMessageResponse> updateThreadChannelMessage(
       {required UpdateMessageRequest request});
 
-  Future<DeleteMessageResponse> deleteSpaceChannelMessage(
-      {required DeleteMessageRequest request});
   Future<DeleteMessageResponse> deleteDirectChannelMessage(
       {required DeleteMessageRequest request});
   Future<DeleteMessageResponse> deleteThreadChannelMessage(
