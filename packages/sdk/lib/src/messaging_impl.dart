@@ -67,12 +67,6 @@ class MessagingImpl extends Messaging {
   }
 
   @override
-  Future<CreateChannelResponse> createDirectChannel(
-      {required CreateChannelRequest request}) {
-    return getClient().then((client) => client.createDirectChannel(request));
-  }
-
-  @override
   Future<CreateChannelResponse> createSpaceChannel(
       {required CreateChannelRequest request}) {
     return getClient().then((client) => client.createSpaceChannel(request));

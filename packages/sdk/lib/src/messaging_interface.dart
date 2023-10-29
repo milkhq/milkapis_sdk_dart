@@ -9,8 +9,6 @@ abstract class Messaging {
 
   Future<CreateChannelResponse> createSpaceChannel(
       {required CreateChannelRequest request});
-  Future<CreateChannelResponse> createDirectChannel(
-      {required CreateChannelRequest request});
   Future<CreateChannelResponse> createThreadChannel(
       {required CreateChannelRequest request});
 
