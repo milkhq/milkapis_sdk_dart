@@ -1,3 +1,7 @@
+## 0.0.10
+
+ - **FEAT**: added chat.
+
 ## 0.0.9
 
  - **FEAT**: upgrade to v.0.0.18.
