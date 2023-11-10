@@ -1,3 +1,7 @@
+## 0.0.11
+
+ - **FEAT**: upgrade protobuf to v0.0.20.
+
 ## 0.0.10
 
  - **FEAT**: added chat.
