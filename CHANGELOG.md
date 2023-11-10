@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`milkapis_sdk_dart` - `v0.0.12`](#milkapis_sdk_dart---v0012)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.12`
+
+ - **FEAT**: upgrade protobuf version.
+
+
+## 2023-11-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`milkapis_sdk_dart` - `v0.0.11`](#milkapis_sdk_dart---v0011)
 
 ---

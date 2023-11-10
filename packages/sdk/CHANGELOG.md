@@ -1,3 +1,7 @@
+## 0.0.12
+
+ - **FEAT**: upgrade protobuf version.
+
 ## 0.0.11
 
  - **FEAT**: upgrade protobuf to v0.0.20.
