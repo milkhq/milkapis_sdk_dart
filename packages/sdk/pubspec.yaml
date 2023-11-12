@@ -1,6 +1,6 @@
 name: milkapis_sdk_dart
 description: A dart sdk for milkapis.
-version: 0.0.12
+version: 0.0.13
 repository: https://github.com/milkhq/milkapis_sdk_dart
 publish_to: none
 
