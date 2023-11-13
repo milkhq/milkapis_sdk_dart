@@ -1,3 +1,7 @@
+## 0.0.14
+
+ - **FEAT**: only use https.
+
 ## 0.0.13
 
  - **FEAT**: upgrade apis version.
