@@ -14,7 +14,7 @@ Channel createChannel(
     void Function()? channelShutdownHandler}) {
   return isGrpcWeb
       ? GrpcWebClientChannel.xhr(Uri.parse(
-          '${port == 443 ? 'https' : 'http'}://$host${(port == 443 || port == 80) ? '' : ':$port'}'))
+          'https://$host${(port == 443 || port == 80) ? '' : ':$port'}'))
       : ClientChannel(host,
           port: port,
           channelShutdownHandler: channelShutdownHandler,
@@ -23,11 +23,7 @@ Channel createChannel(
                 GzipCodec(),
                 IdentityCodec(),
               ]),
-              keepAlive: ClientKeepAliveOptions(
-                  pingInterval: Duration(milliseconds: 25000),
-                  permitWithoutCalls: true),
-              credentials: port == 443
-                  ? const ChannelCredentials.secure()
-                  : const ChannelCredentials.insecure(),
+              keepAlive: ClientKeepAliveOptions(),
+              credentials: const ChannelCredentials.secure(),
               userAgent: userAgent));
 }
