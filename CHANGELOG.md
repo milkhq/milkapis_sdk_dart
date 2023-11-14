@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-11-14
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`milkapis_sdk_dart` - `v0.0.14+1`](#milkapis_sdk_dart---v00141)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.14+1`
+
+ - **FIX**: tls config.
+
+
 ## 2023-11-13
 
 ### Changes
