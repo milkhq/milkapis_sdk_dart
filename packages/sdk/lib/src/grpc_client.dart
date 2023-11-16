@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import 'grpc_client.web.dart'
     if (dart.library.html) 'package:grpc/grpc_web.dart'
     show GrpcWebClientChannel;
@@ -13,8 +15,8 @@ Channel createChannel(
     String userAgent = 'milkapis_client_dart',
     void Function()? channelShutdownHandler}) {
   return isGrpcWeb
-      ? GrpcWebClientChannel.xhr(Uri.parse(
-          '${port == 443 || port == 8080 ? 'https' : 'http'}://$host${(port == 443 || port == 80) ? '' : ':$port'}'))
+      ? GrpcWebClientChannel.xhr(
+          Uri.parse('${kReleaseMode ? 'https' : 'http'}://$host:$port'))
       : ClientChannel(host,
           port: port,
           channelShutdownHandler: channelShutdownHandler,
@@ -23,10 +25,7 @@ Channel createChannel(
                 GzipCodec(),
                 IdentityCodec(),
               ]),
-              keepAlive: ClientKeepAliveOptions(
-                  pingInterval: Duration(milliseconds: 25000),
-                  permitWithoutCalls: true),
-              credentials: port == 443
+              credentials: kReleaseMode
                   ? const ChannelCredentials.secure()
                   : const ChannelCredentials.insecure(),
               userAgent: userAgent));
