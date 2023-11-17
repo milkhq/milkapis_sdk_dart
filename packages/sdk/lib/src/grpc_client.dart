@@ -14,9 +14,12 @@ Channel createChannel(
     required int port,
     String userAgent = 'milkapis_client_dart',
     void Function()? channelShutdownHandler}) {
+  final isUnsecure = host.startsWith('192.168.1') ||
+      host.startsWith('localhost') ||
+      host.startsWith('127.0.0.1');
   return isGrpcWeb
       ? GrpcWebClientChannel.xhr(
-          Uri.parse('${kReleaseMode ? 'https' : 'http'}://$host:$port'))
+          Uri.parse('${isUnsecure ? 'http' : 'https'}://$host:$port'))
       : ClientChannel(host,
           port: port,
           channelShutdownHandler: channelShutdownHandler,
@@ -25,8 +28,8 @@ Channel createChannel(
                 GzipCodec(),
                 IdentityCodec(),
               ]),
-              credentials: kReleaseMode
-                  ? const ChannelCredentials.secure()
-                  : const ChannelCredentials.insecure(),
+              credentials: isUnsecure
+                  ? const ChannelCredentials.insecure()
+                  : const ChannelCredentials.secure(),
               userAgent: userAgent));
 }
