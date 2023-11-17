@@ -1,3 +1,7 @@
+## 0.0.14+3
+
+ - **FIX**: client security config.
+
 ## 0.0.14+2
 
  - **FIX**: client tls config.
