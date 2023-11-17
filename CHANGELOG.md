@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`milkapis_sdk_dart` - `v0.0.15`](#milkapis_sdk_dart---v0015)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.15`
+
+ - **FEAT**: upgrade to version 0.0.23.
+
+
+## 2023-11-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`milkapis_sdk_dart` - `v0.0.14+3`](#milkapis_sdk_dart---v00143)
 
 ---

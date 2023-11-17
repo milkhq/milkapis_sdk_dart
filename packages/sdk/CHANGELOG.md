@@ -1,3 +1,7 @@
+## 0.0.15
+
+ - **FEAT**: upgrade to version 0.0.23.
+
 ## 0.0.14+3
 
  - **FIX**: client security config.
