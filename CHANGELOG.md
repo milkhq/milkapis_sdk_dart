@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-11-28
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`milkapis_sdk_dart` - `v0.0.16`](#milkapis_sdk_dart---v0016)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.16`
+
+ - **FEAT**: upgrade api version and remove firebase.
+
+
 ## 2023-11-17
 
 ### Changes
