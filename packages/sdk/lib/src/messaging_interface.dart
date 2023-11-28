@@ -74,4 +74,5 @@ abstract class Messaging {
       {required GetSpaceChannelCategoriesRequest request});
 
   Future<MessagingClient> getClient();
+  Future<MessagingClient> getUnauthenticatedClient();
 }

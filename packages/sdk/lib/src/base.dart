@@ -37,7 +37,7 @@ extension StatusExt3 on MESSAGING_DOCUMENT_STATUS {
 }
 
 class MilkSdk {
-  static init() {
+  static void init() {
     GetIt.instance
         .registerLazySingleton<CoreFirebaseImpl>(() => CoreFirebaseImpl());
     GetIt.instance

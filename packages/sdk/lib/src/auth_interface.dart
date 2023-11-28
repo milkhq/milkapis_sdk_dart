@@ -48,10 +48,10 @@ abstract class Auth {
   Future<void> signInWithEmailAndPassword(String email, String password);
   Future<void> signInWithCustomToken(String token);
   Future<void> signOut();
-  User? get currentUser;
-  Stream<User?> get userChanges;
+  // User? get currentUser;
+  Stream<bool> get userChanges;
   Future<String?> get idToken;
-  Stream<UserMetadata?> get metadataChanges;
-  Future<UserMetadata?> get metadata;
   Future<UserMetadata?> getMetadataByUid({required String uid});
+
+  User? get currentUser => MilkSdk.core.currentUser;
 }

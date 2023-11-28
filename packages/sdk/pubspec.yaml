@@ -12,18 +12,25 @@ dependencies:
   flutter:
     sdk: flutter
   path: ^1.8.0
-  firebase_auth: ^4.10.0
-  firebase_core: ^2.16.0
+  firedart: ^0.9.7
+  shared_preferences: ^2.2.2
+  # firebase_auth: ^4.10.0
+  # firebase_core: ^2.16.0
   # milkapis_client_dart:
   #   path: /Users/pl/Documents/milkhq/milkapis_protobuf/src/generated/dart
   milkapis_client_dart:
     git:
       url: https://github.com/milkhq/milkapis_protobuf.git
-      ref: milkapis_protobuf-v0.0.23
+      ref: milkapis_protobuf-v0.0.24
       path: src/generated/dart
   get_it: ^7.6.4
   grpc: ^3.2.4
   pool: ^1.5.1
+  rxdart: ^0.27.2
+
+dependency_overrides: 
+  grpc: 
+    path: /Users/pl/Documents/open-source/forks/grpc-dart
 
 dev_dependencies:
   lints: ^2.1.0

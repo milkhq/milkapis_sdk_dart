@@ -8,7 +8,7 @@ import 'package:milkapis_client_dart/generated/messaging.pbgrpc.dart'
 export 'package:milkapis_client_dart/generated/messaging.pbgrpc.dart';
 
 class MessagingImpl extends Messaging {
-  final _clientPool = Pool(3, timeout: Duration(seconds: 30));
+  final _clientPool = Pool(2, timeout: Duration(seconds: 30));
 
   Future<Channel> get channel {
     return _clientPool.withResource(() {
@@ -19,13 +19,23 @@ class MessagingImpl extends Messaging {
   CallOptions get callOptions =>
       CallOptions(compression: const GzipCodec(), providers: [
         (map, key) async {
-          map['authorization'] = (await MilkSdk.auth.idToken) ?? '';
+          try {
+            map['authorization'] = (await MilkSdk.auth.idToken) ?? '';
+          } catch (e, stackTrace) {
+            print('Error getting token: $e');
+            print(stackTrace);
+          }
         }
       ]);
 
   @override
   Future<messaging.MessagingClient> getClient() async {
     return messaging.MessagingClient(await channel, options: callOptions);
+  }
+
+  @override
+  Future<MessagingClient> getUnauthenticatedClient() async {
+    return messaging.MessagingClient(await channel);
   }
 
   @override

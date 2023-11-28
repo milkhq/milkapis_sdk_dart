@@ -8,6 +8,7 @@ abstract class Space {
   bool isGrpcWeb = false;
 
   Future<space_schema.SpaceClient> getClient();
+  Future<space_schema.SpaceClient> getUnauthenticatedClient();
   Future<space_schema.SpaceDocument> getSpaceById({required String spaceId});
   Future<space_schema.CreateSpaceResponse> createSpace(
       {required CreateSpaceRequest request});

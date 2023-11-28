@@ -8,7 +8,7 @@ import 'package:pool/pool.dart';
 export 'package:milkapis_client_dart/generated/space.pbgrpc.dart';
 
 class SpaceImpl extends Space {
-  final _clientPool = Pool(3, timeout: Duration(seconds: 30));
+  final _clientPool = Pool(2, timeout: Duration(seconds: 30));
 
   Future<Channel> get channel {
     return _clientPool.withResource(() {
@@ -19,13 +19,23 @@ class SpaceImpl extends Space {
   CallOptions get callOptions =>
       CallOptions(compression: const GzipCodec(), providers: [
         (map, key) async {
-          map['authorization'] = (await MilkSdk.auth.idToken) ?? '';
+          try {
+            map['authorization'] = (await MilkSdk.auth.idToken) ?? '';
+          } catch (e, stackTrace) {
+            print('Error getting token: $e');
+            print(stackTrace);
+          }
         }
       ]);
 
   @override
   Future<space_schema.SpaceClient> getClient() async {
     return space_schema.SpaceClient(await channel, options: callOptions);
+  }
+
+  @override
+  Future<space_schema.SpaceClient> getUnauthenticatedClient() async {
+    return space_schema.SpaceClient(await channel);
   }
 
   @override

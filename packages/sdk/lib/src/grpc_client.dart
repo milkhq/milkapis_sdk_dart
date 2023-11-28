@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
-
 import 'grpc_client.web.dart'
-    if (dart.library.html) 'package:grpc/grpc_web.dart'
+    if (dart.library.js_interop) 'package:grpc/grpc_web.dart'
     show GrpcWebClientChannel;
 import 'package:grpc/service_api.dart' as grpc;
 import 'package:grpc/grpc.dart';
