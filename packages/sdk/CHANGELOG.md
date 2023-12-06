@@ -1,3 +1,7 @@
+## 0.0.17
+
+ - **FEAT**: update to v0.0.25.
+
 ## 0.0.16
 
  - **FEAT**: upgrade api version and remove firebase.
