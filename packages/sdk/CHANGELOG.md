@@ -1,3 +1,7 @@
+## 0.0.18
+
+ - **FEAT**: upgrade to v0.0.26.
+
 ## 0.0.17
 
  - **FEAT**: update to v0.0.25.
