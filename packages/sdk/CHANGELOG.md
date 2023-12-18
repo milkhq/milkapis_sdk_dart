@@ -1,3 +1,8 @@
+## 0.0.20
+
+ - **FIX**: deps.
+ - **FEAT**: upgrade deps.
+
 ## 0.0.19
 
  - **FEAT**: upgrade to v0.0.27.
