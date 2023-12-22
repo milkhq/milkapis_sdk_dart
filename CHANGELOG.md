@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`milkapis_sdk_dart` - `v0.0.21`](#milkapis_sdk_dart---v0021)
+
+---
+
+#### `milkapis_sdk_dart` - `v0.0.21`
+
+ - **FEAT**: upgrade to v0.0.28.
+
+
 ## 2023-12-18
 
 ### Changes
